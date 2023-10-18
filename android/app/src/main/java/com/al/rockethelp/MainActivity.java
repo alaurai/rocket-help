@@ -1,4 +1,4 @@
-package com.rockethelp;
+package com.al.rockethelp;
 
 import android.os.Build;
 import android.os.Bundle;
