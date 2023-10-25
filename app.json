@@ -16,6 +16,11 @@
     "ios": {
       "bundleIdentifier": "com.al.rockethelp",
       "googleServicesFile": "./GoogleService-Info.plist"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "39528256-7910-45c4-9bf4-a3b61b842165"
+      }
     }
   }
 }

@@ -1,4 +1,5 @@
 import { NativeBaseProvider, StatusBar } from 'native-base';
+
 import {
   Roboto_400Regular,
   Roboto_700Bold,
@@ -6,7 +7,6 @@ import {
 } from '@expo-google-fonts/roboto';
 import { THEME } from './src/styles/theme';
 import { Loading } from './src/components/Loading';
-import { Details } from './src/screens/Details';
 import { Routes } from './src/routes';
 
 export default function App() {
