@@ -18,6 +18,25 @@ export function SignIn() {
     if (!email || !password) {
       return Alert.alert('Entrar', 'Informe e-mail e senha');
     }
+    setIsLoading(true);
+    auth()
+      .signInWithEmailAndPassword(email, password)
+      .then((respnse) => {
+        console.log(respnse);
+      })
+      .catch((error) => {
+        console.log(error);
+        setIsLoading(false);
+
+        if (error.code === 'auth/invalid-email') {
+          return Alert.alert('Entrar', 'E-mail inválido');
+        }
+        if (error.code === 'auth/wrong-password') {
+          return Alert.alert('Entrar', 'E-mail ou senha inválida');
+        }
+
+        return Alert.alert('Entrar', 'Não foi possível fazer login');
+      });
   }
 
   return (
@@ -41,7 +60,12 @@ export function SignIn() {
         mb={8}
         onChangeText={setPassword}
       />
-      <Button title="Entrar" w="full" onPress={handleSignIn} />
+      <Button
+        title="Entrar"
+        w="full"
+        onPress={handleSignIn}
+        isLoading={isLoading}
+      />
     </VStack>
   );
 }
